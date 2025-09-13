@@ -40,9 +40,6 @@ on:
       WRT_TEST:
         required: false
         type: string
-      WRT_SSH:
-        required: true
-        type: string
   
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
