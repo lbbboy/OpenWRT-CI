@@ -20,6 +20,22 @@ on:
         default: 'false'
         required: false
         type: boolean
+      ssh:
+        description: 'Enable SSH connection?'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - false
+          - true
+      ngrok:
+        description: 'Start SSH via ngrok'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - false
+          - true
 
 #CI权限
 permissions: write-all
