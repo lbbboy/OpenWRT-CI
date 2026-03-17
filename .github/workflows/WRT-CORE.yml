@@ -190,6 +190,7 @@ jobs:
         if: ${{ env.WRT_ssh == 'true' }}
 
       - name: Start SSH via ngrok
+        if: ${{ env.WRT_ngrok == 'true' }}
         uses: lbbboy/ssh2actions@main
         with:
           mode: ngrok
@@ -198,8 +199,7 @@ jobs:
          NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        if: ${{ env.WRT_ngrok == 'true' }} 
+         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}        
 
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
