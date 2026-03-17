@@ -45,7 +45,7 @@ on:
         type: string
       WRT_ngrok:
         required: false
-        type: string      
+        type: string   
   
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -199,7 +199,7 @@ jobs:
          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-         if: ${{ env.WRT_ngrok == 'true' }} 
+        if: ${{ env.WRT_ngrok == 'true' }} 
 
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
