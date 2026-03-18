@@ -148,6 +148,11 @@ jobs:
             echo "caches cleanup done!"
           fi
 
+      - name: Add Passwall2 Feed
+        run: |
+          cd ./wrt/
+          sed -i '$a src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2' feeds.conf.default
+          
       - name: Update Feeds
         run: |
           cd ./wrt/
