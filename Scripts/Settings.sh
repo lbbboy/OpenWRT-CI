@@ -72,3 +72,6 @@ a.brand {
     display: none !important;
 }
 EOF
+
+# passwall2
+sed -i '$a src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2' feeds.conf.default
