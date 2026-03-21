@@ -27,6 +27,15 @@ jobs:
   ssh-job:
     runs-on: ubuntu-22.04
     steps:
+      - name: Initialization Environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo -E apt -yqq update
+          sudo -E apt-get -qqy install $(curl -fsSL is.gd/BKiQLE)
+          sudo -E systemctl daemon-reload
+          sudo -E timedatectl set-timezone "Asia/Shanghai"
+          
       - name: Maximize build space
         uses: easimon/maximize-build-space@master
         with:
