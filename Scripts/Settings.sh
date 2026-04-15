@@ -72,3 +72,10 @@ a.brand {
     display: none !important;
 }
 EOF
+
+# 1. 干掉 system 里的 Plugins
+sed -i '/admin\/system\/plugins/,/},/d' \
+feeds/luci/modules/luci-mod-system/root/usr/share/luci/menu.d/luci-mod-system.json
+
+# 2. 干掉所有插件挂载（关键）
+grep -rl 'admin/plugins' feeds/luci | xargs sed -i 's/admin\/plugins/admin\/services/g'
