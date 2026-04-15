@@ -187,6 +187,11 @@ jobs:
 
           make download -j$(nproc)
 
+      - name: Clean LuCI UI
+        run: |
+          cd ./wrt/
+          $GITHUB_WORKSPACE/remove_plugins.sh
+
       - name: SSH connection to Actions
         env:
           TELEGRAM_BOT_TOKEN : ${{ secrets.TELEGRAM_TOKEN }}
