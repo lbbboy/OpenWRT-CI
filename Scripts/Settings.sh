@@ -23,6 +23,8 @@ elif [ -f "$WIFI_UC" ]; then
 	sed -i "s/country='.*'/country='CN'/g" $WIFI_UC
 	#修改WIFI加密
 	sed -i "s/encryption='.*'/encryption='psk2+ccmp'/g" $WIFI_UC
+	# 发射功率（如果字段存在）
+    sed -i "s/txpower='.*'/txpower='20'/g" $WIFI_UC
 fi
 
 CFG_FILE="./package/base-files/files/bin/config_generate"
