@@ -190,7 +190,7 @@ jobs:
       - name: Clean LuCI UI
         run: |
           cd ./wrt/
-          $GITHUB_WORKSPACE/luci_slim.sh
+          $GITHUB_WORKSPACE/Scripts/luci_slim.sh
 
       - name: SSH connection to Actions
         env:
