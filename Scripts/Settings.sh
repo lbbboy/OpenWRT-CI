@@ -23,8 +23,6 @@ elif [ -f "$WIFI_UC" ]; then
 	sed -i "s/country='.*'/country='CN'/g" $WIFI_UC
 	#修改WIFI加密
 	sed -i "s/encryption='.*'/encryption='psk2+ccmp'/g" $WIFI_UC
-	# 发射功率（如果字段存在）
-    sed -i "s/txpower='.*'/txpower='20'/g" $WIFI_UC
 fi
 
 CFG_FILE="./package/base-files/files/bin/config_generate"
@@ -74,9 +72,3 @@ a.brand {
     display: none !important;
 }
 EOF
-
-# 1. 干掉 system 里的 Plugins
-#sed -i '/admin\/system\/plugins/,/},/d' package/feeds/luci/modules/luci-mod-system/root/usr/share/luci/menu.d/luci-mod-system.json
-
-# 2. 干掉所有插件挂载（关键）
-#grep -rl 'admin/plugins' package/feeds/luci | xargs sed -i 's/admin\/plugins/admin\/services/g'
