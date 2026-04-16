@@ -6,7 +6,7 @@ echo " OpenWrt LuCI Hide Menu Script"
 echo " Safe mode (hidden=true)"
 echo "======================================"
 
-LUCI_FEEDS="feeds/luci"
+LUCI_FEEDS="package/feeds/luci"
 
 # =========================
 # 通用函数：给某菜单块加 hidden
